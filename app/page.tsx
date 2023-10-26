@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar/page";
 import Footer from "./components/Footer/page";
+import bee1 from "../public/assets/images/Bee/bee_1.svg";
+import bee2 from "../public/assets/images/Bee/bee_2.svg";
 
 export default function Home() {
   return (
@@ -35,10 +37,10 @@ export default function Home() {
               </div>
               <div className="w-full justify-center items-center">
                 <Image
-                  src="/assets/images/bee/bee_1.svg"
+                  src={bee1}
                   width={150}
                   height={150}
-                  alt="logo beenefit"
+                  alt="bee"
                   draggable="false"
                 />
               </div>
@@ -49,7 +51,7 @@ export default function Home() {
           <div className="flex shadow-2xl border-2 border-[#228B22] justify-end rounded-full w-1/3 p-4 gap-4 ml-[-5%]">
             <div className="z-10 mt-[-7%]">
               <Image
-                src="/assets/images/bee/bee_2.svg"
+                src={bee2}
                 width={90}
                 height={90}
                 alt="bee"
