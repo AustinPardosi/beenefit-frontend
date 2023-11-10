@@ -23,7 +23,7 @@ const NavbarComponent = () => {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="bg-[#FFD67A] py-2 w-full z-10 fixed "
+      className="bg-[#FFD67A] py-2 sm:py-4 w-full z-10 fixed "
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
@@ -32,7 +32,7 @@ const NavbarComponent = () => {
         />
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex" justify="start">
+      <NavbarContent className="hidden sm:flex " justify="start">
         <NavbarBrand>
           <Image
             width={100}

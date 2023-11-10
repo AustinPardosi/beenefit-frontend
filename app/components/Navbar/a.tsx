@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Menu } from "lucide-react";
 
-const a = () => {
+const A = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -34,4 +34,4 @@ const a = () => {
   );
 };
 
-export default a;
+export default A;
