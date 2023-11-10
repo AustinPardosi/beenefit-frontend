@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -13,7 +15,7 @@ import {
 import { Image } from "@nextui-org/react";
 
 const NavbarComponent = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = ["The Bees", "Community", "FAQ", "Starting Up"];
 

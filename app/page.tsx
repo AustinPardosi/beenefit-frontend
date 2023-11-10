@@ -6,7 +6,7 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 
 import Image from "next/image";
 // import Navbar from "./components/Navbar/a";
-import NavbarComponent from "./components/Navbar/page";
+import NavbarComponent from "./components/NavbarComponent/page";
 import Footer from "./components/Footer/page";
 import bee2 from "../public/assets/images/Bee/bee_2.svg";
 
