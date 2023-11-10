@@ -1,29 +1,119 @@
-import Image from "next/image";
 import React from "react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 
-const Navbar = () => {
+const NavbarComponent = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const menuItems = ["The Bees", "Community", "FAQ", "Starting Up"];
+
   return (
-    <div className="sticky top-0 z-[100] w-full">
-      <nav className="sticky top-0 h-[6rem] justify-between items-center px-[50px] md:px-[75px] emd:px-[75px] bg-[#FFD67A] z-10 md:flex hidden shadow-lg text-black font-bold cursor-pointer">
-        <div className="brand flex relative">
+    <Navbar
+      shouldHideOnScroll
+      isBordered
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+      className="bg-[#FFD67A] py-2 w-full z-10 fixed "
+    >
+      <NavbarContent className="sm:hidden" justify="start">
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className=" text-black"
+        />
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex" justify="start">
+        <NavbarBrand>
           <Image
+            width={100}
+            alt="Beenefit Logo"
             src="/assets/images/beenefit_logo.svg"
-            width={150}
-            height={150}
-            alt="logo beenefit"
-            draggable="false"
           />
-        </div>
-        <div className="flex gap-16">
-          <p>The Bees</p>
-          <p>Community</p>
-          <p>FAQ</p>
-          <p>Starting Up</p>
-          <p>Sign Up</p>
-        </div>
-      </nav>
-    </div>
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent className="sm:hidden pr-3" justify="center">
+        <NavbarBrand>
+          <Image
+            width={100}
+            alt="Beenefit Logo"
+            src="/assets/images/beenefit_logo.svg"
+          />
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link className="text-[#228B22] font-bold" href="#">
+            The Bees
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive>
+          <Link
+            className="text-[#228B22] font-bold"
+            href="#"
+            aria-current="page"
+          >
+            Community
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="text-[#228B22] font-bold" href="#">
+            FAQ
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="text-[#228B22] font-bold" href="#">
+            Starting Up
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <Button
+            as={Link}
+            color="primary"
+            href="#"
+            variant="bordered"
+            className="border-[#228B22] text-[#228B22] font-bold"
+          >
+            Sign Up
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              color={
+                index === 2
+                  ? "primary"
+                  : index === menuItems.length - 1
+                  ? "danger"
+                  : "foreground"
+              }
+              className="w-full pt-4 text-[#228B22] font-bold"
+              href="#"
+              size="lg"
+            >
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default NavbarComponent;
