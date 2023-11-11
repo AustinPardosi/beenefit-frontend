@@ -133,6 +133,7 @@ export default function Home() {
                 width={400}
                 height={90}
                 alt="get-beenefit"
+                draggable="false"
               />
             </div>
 
@@ -142,11 +143,12 @@ export default function Home() {
                 width={640}
                 height={40}
                 alt="get-beenefit"
+                draggable="false"
               />
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full px-4 sm:px-20 md:px-40 md:pt-16">
-              <div className="flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-4 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full px-4 sm:px-8 md:pt-16">
+              <div className="sm:hidden flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-4 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
                 <div className="flex justify-center rounded-3xl px-16 py-1 bg-[#FFD67A] border-2 md:border-4 w-2/3 border-[#228B22]">
                   <p className="font-bold text-[#228B22]">Step 1</p>
                 </div>
@@ -165,7 +167,7 @@ export default function Home() {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-4 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
+              <div className="sm:hidden flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-4 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
                 <div className="flex justify-center rounded-3xl px-16 py-1 bg-[#FFD67A] border-2 md:border-4 w-2/3 border-[#228B22]">
                   <p className="font-bold text-[#228B22]">Step 2</p>
                 </div>
@@ -184,7 +186,7 @@ export default function Home() {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-4 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
+              <div className="sm:hidden flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-4 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
                 <div className="flex justify-center rounded-3xl px-16 py-1 bg-[#FFD67A] border-2 md:border-4 w-2/3 border-[#228B22]">
                   <p className="font-bold text-[#228B22]">Step 3</p>
                 </div>
@@ -203,27 +205,112 @@ export default function Home() {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
               </div>
+
+              <div className="hidden sm:flex flex-col gap-4 justify-center items-center rounded-3xl px-4 py-4 bg-[#F1F1F1] border-4 border-[#FFD67A]">
+                <div className="flex justify-center rounded-3xl sm:px-8 md:px-4 bg-[#FFD67A] border-1 w-1/2 border-[#228B22]">
+                  <p className="font-bold text-[#228B22]">Step 1</p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-full flex justify-center items-center">
+                    <Image
+                      src="/assets/images/stingless_bee.svg"
+                      width={150}
+                      height={150}
+                      alt="stingless bee"
+                      draggable="false"
+                    />
+                  </div>
+                  <div className="w-full flex flex-col gap-4 ">
+                    <p className="font-bold text-[#228B22] text-base lg:text-xl">
+                      Konsultasi
+                    </p>
+                    <p className="font-normal text-black text-xs lg:text-sm">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="hidden sm:flex flex-col gap-4 justify-center items-center rounded-3xl px-4 py-4 bg-[#F1F1F1] border-4 border-[#FFD67A]">
+                <div className="flex justify-center rounded-3xl sm:px-8 md:px-4 bg-[#FFD67A] border-1 w-1/2 border-[#228B22]">
+                  <p className="font-bold text-[#228B22]">Step 2</p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-full flex justify-center items-center">
+                    <Image
+                      src="/assets/images/stingless_bee.svg"
+                      width={150}
+                      height={150}
+                      alt="stingless bee"
+                      draggable="false"
+                    />
+                  </div>
+                  <div className="w-full flex flex-col gap-4 ">
+                    <p className="font-bold text-[#228B22] text-base lg:text-xl">
+                      Pengiriman
+                    </p>
+                    <p className="font-normal text-black text-xs lg:text-sm">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="hidden sm:flex flex-col gap-4 justify-center items-center rounded-3xl px-4 py-4 bg-[#F1F1F1] border-4 border-[#FFD67A]">
+                <div className="flex justify-center rounded-3xl sm:px-8 md:px-4 bg-[#FFD67A] border-1 w-1/2 border-[#228B22]">
+                  <p className="font-bold text-[#228B22]">Step 3</p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-full flex justify-center items-center">
+                    <Image
+                      src="/assets/images/stingless_bee.svg"
+                      width={150}
+                      height={150}
+                      alt="stingless bee"
+                      draggable="false"
+                    />
+                  </div>
+                  <div className="w-full flex flex-col gap-4 ">
+                    <p className="font-bold text-[#228B22] text-base lg:text-xl">
+                      Pemasangan
+                    </p>
+                    <p className="font-normal text-black text-xs lg:text-sm">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
           <section className="community">
-            <div className="flex shadow-2xl border-2 border-[#228B22] justify-end rounded-full w-1/2 p-4 gap-4 ml-[-13%]">
-              <div className="z-10 mt-[-5%]">
-                <Image
-                  src={bee2}
-                  width={90}
-                  height={90}
-                  alt="bee"
-                  draggable="false"
-                />
-              </div>
-              <p className="flex text-5xl font-bold text-[#228B22] items-center">
-                In This Community
-              </p>
+            <div className="sm:hidden flex w-72">
+              <Image
+                src="/assets/images/community_sm.svg"
+                width={400}
+                height={90}
+                alt="community"
+                draggable="false"
+              />
             </div>
-            <div className="flex flex-col sm:flex-row justify-center items-center pt-16 gap-16 w-full">
-              <div className="flex justify-center rounded-3xl p-8 border-4 border-[#FFD67A]">
-                <div className="w-full items-center">
+
+            <div className="hidden sm:flex w-full">
+              <Image
+                src="/assets/images/community.svg"
+                width={640}
+                height={40}
+                alt="community"
+                draggable="false"
+              />
+            </div>
+
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full px-4 sm:px-8 md:pt-16">
+              <div className="flex w-full justify-start items-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
+                <div className="w-fit flex justify-center items-center">
                   <Image
                     src="/assets/images/stingless_bee.svg"
                     width={150}
@@ -232,14 +319,15 @@ export default function Home() {
                     draggable="false"
                   />
                 </div>
-                <div className="items-center">
-                  <h1 className="text-[#228B22] font-bold text-2xl">
+                <div className="flex flex-col gap-1">
+                  <h1 className="text-[#228B22] font-bold text-xl lg:text-2xl">
                     125 Beekeepers
                   </h1>
                 </div>
               </div>
-              <div className="flex justify-center rounded-3xl p-8 border-4  border-[#FFD67A]">
-                <div className="w-full items-center">
+
+              <div className="flex w-full justify-start items-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
+                <div className="w-fit flex justify-center items-center">
                   <Image
                     src="/assets/images/stingless_bee.svg"
                     width={150}
@@ -248,17 +336,18 @@ export default function Home() {
                     draggable="false"
                   />
                 </div>
-                <div className="flex flex-col justify-center items-center gap-8">
-                  <h1 className="text-[#228B22] font-bold text-4xl">
+                <div className="flex flex-col gap-1">
+                  <h1 className="text-[#228B22] font-bold text-xl lg:text-2xl">
                     2 Millions Bee
                   </h1>
-                  <h1 className="text-[#228B22] font-light text-4xl">
+                  <h1 className="text-[#228B22] tracking-tight font-normal text-base md:text-lg">
                     and ZERO stings
                   </h1>
                 </div>
               </div>
-              <div className="flex justify-center rounded-3xl p-8 border-4 border-[#FFD67A]">
-                <div className="w-full justify-center items-center">
+
+              <div className="flex w-full justify-start items-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
+                <div className="w-fit flex justify-center items-center">
                   <Image
                     src="/assets/images/stingless_bee.svg"
                     width={150}
@@ -267,11 +356,11 @@ export default function Home() {
                     draggable="false"
                   />
                 </div>
-                <div className="flex flex-col justify-center items-center gap-8">
-                  <h1 className="text-[#228B22] font-bold text-4xl">
+                <div className="flex flex-col gap-1">
+                  <h1 className="text-[#228B22] font-bold text-xl lg:text-2xl">
                     Rp120,000,000
                   </h1>
-                  <h1 className="text-[#228B22] font-light text-4xl">
+                  <h1 className="text-[#228B22] tracking-tight font-normal text-base md:text-lg">
                     bee products traded monthly
                   </h1>
                 </div>
@@ -368,36 +457,55 @@ export default function Home() {
               </p>
             </div>
             <div className="flex justify-center items-center pt-16 gap-16 px-16 text-black">
-              <Accordion>
+              <Accordion variant="splitted">
                 <AccordionItem
                   key="1"
                   aria-label="Accordion 1"
-                  title="Accordion 1"
+                  title="Berapa jumlah madu yang dihasilkan?"
+                  className="border-2 border-[#228B22]"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat;
+                  Dalam 2-3 minggu, 1 koloni bisa menghasilkan sekitar 2-3
+                  sendok makan madu. Idealnya, untuk mendapatkan produksi penuh,
+                  dibutuhkan waktu sekitar 3-4 bulan.
                 </AccordionItem>
                 <AccordionItem
                   key="2"
                   aria-label="Accordion 2"
-                  title="Accordion 2"
+                  title="Mengapa saya harus memiliki rumah lebah ini?"
+                  className="border-2 border-[#228B22]"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat;
+                  Dengan memiliki rumah lebah, Anda dapat membantu penyerbukan
+                  tanaman di taman Anda, memenuhi kebutuhan madu personal dan
+                  dapat digunakan sebagai sarana edukasi untuk anak-anak.
                 </AccordionItem>
                 <AccordionItem
                   key="3"
                   aria-label="Accordion 3"
-                  title="Accordion 3"
+                  title="Dari mana asal lebah ini?"
+                  className="border-2 border-[#228B22]"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat;
+                  Lebah tanpa sengat secara umum ditemukan di negara tropis.
+                  Koloni lebah tanpa sengat kami berasal dari Jawa Barat,
+                  Indonesia.
+                </AccordionItem>
+                <AccordionItem
+                  key="4"
+                  aria-label="Accordion 4"
+                  title="Bagaimana cara melakukan panen madu?"
+                  className="border-2 border-[#228B22]"
+                >
+                  Madu dapat dipanen dengan mengambil kantong madunya, kemudian
+                  ditekan. Madu akan keluar secara alami.
+                </AccordionItem>
+                <AccordionItem
+                  key="5"
+                  aria-label="Accordion 5"
+                  title="Berapa lama waktu PO berlangsung?"
+                  className="border-2 border-[#228B22]"
+                >
+                  Kami membuka proses pemesanan setiap 2 minggu sekali.
+                  Informasi lebih lanjut mengenai batch pemesanan dapat
+                  ditemukan di akun Instagram kami.
                 </AccordionItem>
               </Accordion>
             </div>
