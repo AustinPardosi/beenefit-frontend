@@ -372,7 +372,7 @@ export default function Home() {
             <div className="sm:hidden flex w-80">
               <Image
                 src="/assets/images/testimonial_sm.svg"
-                width={400}
+                width={240}
                 height={90}
                 alt="testimonial"
                 draggable="false"
@@ -448,8 +448,8 @@ export default function Home() {
             <div className="sm:hidden flex w-80">
               <Image
                 src="/assets/images/faq_sm.svg"
-                width={400}
-                height={90}
+                width={160}
+                height={60}
                 alt="faq"
                 draggable="false"
               />
