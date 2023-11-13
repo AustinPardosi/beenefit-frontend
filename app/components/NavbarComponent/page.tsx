@@ -25,7 +25,7 @@ const NavbarComponent = () => {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="bg-[#FFD67A] py-2 sm:py-4 w-full z-10 fixed "
+      className="bg-[#FFD67A] w-full sm:py-2 z-10 fixed "
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle

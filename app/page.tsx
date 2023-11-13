@@ -16,7 +16,7 @@ export default function Home() {
       <main className="flex overflow-hidden min-h-screen flex-col items-center w-full justify-center bg-[#FFFCF5]">
         <NavbarComponent />
 
-        <div className="w-full space-y-4 md:space-y-16 pt-16 md:pt-12">
+        <div className="w-full space-y-4 md:space-y-16 py-16 md:pt-12">
           <section className="taman-ramah-lebah">
             <div className="w-full flex justify-center items-center pt-8 px-4 sm:pt-16 sm:px-8">
               <div className="flex flex-col sm:flex-row justify-center items-center rounded-xl bg-[#F1F1F1] sm:rounded-3xl p-4 sm:p-8 border-2 sm:border-4 border-[#228B22]">
@@ -369,23 +369,29 @@ export default function Home() {
           </section>
 
           <section className="testimony">
-            <div className="flex shadow-2xl border-2 border-[#228B22] justify-end rounded-full w-1/2 p-4 gap-4 ml-[-13%]">
-              <div className="z-10 mt-[-5%]">
-                <Image
-                  src={bee2}
-                  width={90}
-                  height={90}
-                  alt="bee"
-                  draggable="false"
-                />
-              </div>
-              <p className="flex text-5xl font-bold text-[#228B22] items-center">
-                Testimonial
-              </p>
+            <div className="sm:hidden flex w-80">
+              <Image
+                src="/assets/images/testimonial_sm.svg"
+                width={400}
+                height={90}
+                alt="testimonial"
+                draggable="false"
+              />
             </div>
-            <div className="flex flex-col sm:flex-row justify-center items-center pt-16 gap-16 px-16">
-              <div className="flex justify-center rounded-3xl p-8 w-2/3 border-4 border-[#FFD67A]">
-                <div className="w-full items-center">
+
+            <div className="hidden sm:flex w-full">
+              <Image
+                src="/assets/images/testimonial.svg"
+                width={500}
+                height={40}
+                alt="testimonial"
+                draggable="false"
+              />
+            </div>
+
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full px-4 sm:px-8 md:pt-16">
+              <div className="flex flex-col justify-center items-center text-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
+                <div className="w-fit flex justify-center items-center">
                   <Image
                     src="/assets/images/stingless_bee.svg"
                     width={150}
@@ -394,14 +400,15 @@ export default function Home() {
                     draggable="false"
                   />
                 </div>
-                <div className="items-center">
-                  <h1 className="text-[#228B22] font-bold text-2xl">
-                    125 Beekeepers
-                  </h1>
-                </div>
+                <h1 className="text-black font-bold text-xl lg:text-2xl">
+                  The bees are very cute and easy to take care of
+                </h1>
+                <h1 className="text-[#228B22] tracking-tight font-normal text-md md:text-base">
+                  Aso, enterpreneur
+                </h1>
               </div>
-              <div className="flex justify-center rounded-3xl p-8 border-4 w-2/3 border-[#FFD67A]">
-                <div className="w-full items-center">
+              <div className="flex flex-col justify-center items-center text-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
+                <div className="w-fit flex justify-center items-center">
                   <Image
                     src="/assets/images/stingless_bee.svg"
                     width={150}
@@ -410,17 +417,15 @@ export default function Home() {
                     draggable="false"
                   />
                 </div>
-                <div className="flex flex-col justify-center items-center gap-8">
-                  <h1 className="text-[#228B22] font-bold text-4xl">
-                    2 Millions Bee
-                  </h1>
-                  <h1 className="text-[#228B22] font-light text-4xl">
-                    and ZERO stings
-                  </h1>
-                </div>
+                <h1 className="text-black font-bold text-xl lg:text-2xl">
+                  The bees are very cute and easy to take care of
+                </h1>
+                <h1 className="text-[#228B22] tracking-tight font-normal text-md md:text-base">
+                  Aso, enterpreneur
+                </h1>
               </div>
-              <div className="flex justify-center rounded-3xl p-8 border-4 w-2/3 border-[#FFD67A]">
-                <div className="w-full justify-center items-center">
+              <div className="flex flex-col justify-center items-center text-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
+                <div className="w-fit flex justify-center items-center">
                   <Image
                     src="/assets/images/stingless_bee.svg"
                     width={150}
@@ -429,32 +434,35 @@ export default function Home() {
                     draggable="false"
                   />
                 </div>
-                <div className="flex flex-col justify-center items-center gap-8">
-                  <h1 className="text-[#228B22] font-bold text-4xl">
-                    Rp120,000,000
-                  </h1>
-                  <h1 className="text-[#228B22] font-light text-4xl">
-                    bee products traded monthly
-                  </h1>
-                </div>
+                <h1 className="text-black font-bold text-xl lg:text-2xl">
+                  The bees are very cute and easy to take care of
+                </h1>
+                <h1 className="text-[#228B22] tracking-tight font-normal text-md md:text-base">
+                  Aso, enterpreneur
+                </h1>
               </div>
             </div>
           </section>
 
           <section className="faq">
-            <div className="flex shadow-2xl border-2 border-[#228B22] justify-end rounded-full w-1/2 p-4 gap-4 ml-[-13%]">
-              <div className="z-10 mt-[-5%]">
-                <Image
-                  src={bee2}
-                  width={90}
-                  height={90}
-                  alt="bee"
-                  draggable="false"
-                />
-              </div>
-              <p className="flex text-5xl font-bold text-[#228B22] items-center">
-                FAQ
-              </p>
+            <div className="sm:hidden flex w-80">
+              <Image
+                src="/assets/images/faq_sm.svg"
+                width={400}
+                height={90}
+                alt="faq"
+                draggable="false"
+              />
+            </div>
+
+            <div className="hidden sm:flex w-full">
+              <Image
+                src="/assets/images/faq.svg"
+                width={300}
+                height={40}
+                alt="faq"
+                draggable="false"
+              />
             </div>
             <div className="flex justify-center items-center pt-16 gap-16 px-16 text-black">
               <Accordion variant="splitted">
