@@ -16,8 +16,13 @@ import { Image } from "@nextui-org/react";
 
 const NavbarComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isActive, setIsActive] = useState(0);
 
   const menuItems = ["The Bees", "Community", "FAQ", "Starting Up"];
+
+  const handleLinkClick = (index: number) => {
+    setIsActive(index);
+  };
 
   return (
     <Navbar
@@ -25,7 +30,8 @@ const NavbarComponent = () => {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="bg-[#FFD67A] w-full sm:py-2 z-10 fixed "
+      maxWidth="full"
+      className="bg-[#FFD67A] w-screen sm:py-2 z-10 fixed "
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
@@ -55,31 +61,21 @@ const NavbarComponent = () => {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link className="text-[#228B22] font-bold" href="#">
-            The Bees
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link
-            className="text-[#228B22] font-bold"
-            href="#"
-            aria-current="page"
-          >
-            Community
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-[#228B22] font-bold" href="#">
-            FAQ
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-[#228B22] font-bold" href="#">
-            Starting Up
-          </Link>
-        </NavbarItem>
+        {menuItems.map((item, index) => (
+          <NavbarItem key={index}>
+            <Link
+              className={`text-[#228B22] font-bold ${
+                isActive === index ? "underline underline-offset-8" : ""
+              }`}
+              href="#"
+              onClick={() => handleLinkClick(index)}
+            >
+              {item}
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
+
       <NavbarContent justify="end">
         <NavbarItem>
           <Button

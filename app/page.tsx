@@ -464,7 +464,7 @@ export default function Home() {
                 draggable="false"
               />
             </div>
-            <div className="flex justify-center items-center pt-16 gap-16 px-16 text-black">
+            <div className="flex justify-center items-center pt-16 gap-16 px-4 sm:px-16 text-black">
               <Accordion variant="splitted">
                 <AccordionItem
                   key="1"
