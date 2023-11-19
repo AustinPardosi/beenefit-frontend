@@ -13,12 +13,18 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/react";
 import { Image } from "@nextui-org/react";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const NavbarComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isActive, setIsActive] = useState(0);
 
-  const menuItems = ["The Bees", "Community", "FAQ", "Starting Up"];
+  const menuItems = [
+    { label: "The Bees", href: "" },
+    { label: "Community", href: "community" },
+    { label: "FAQ", href: "faq" },
+    { label: "Starting Up", href: "" },
+  ];
 
   const handleLinkClick = (index: number) => {
     setIsActive(index);
@@ -31,7 +37,7 @@ const NavbarComponent = () => {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="full"
-      className="bg-[#FFD67A] w-screen sm:py-2 z-10 fixed "
+      className="bg-[#FFD67A] w-screen sm:py-2 z-10 fixed sm:px-8"
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
@@ -60,23 +66,47 @@ const NavbarComponent = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-16" justify="end">
         {menuItems.map((item, index) => (
           <NavbarItem key={index}>
-            <Link
+            {/* <Link
               className={`text-[#228B22] font-bold ${
                 isActive === index ? "underline underline-offset-8" : ""
               }`}
-              href="#"
+              href={item.href}
               onClick={() => handleLinkClick(index)}
             >
-              {item}
-            </Link>
+              {item.label}
+            </Link> */}
+            <ScrollLink
+              className={`text-[#228B22] font-bold ${
+                isActive === index ? "underline underline-offset-8" : ""
+              }`}
+              to={item.href}
+              spy={true}
+              smooth={true}
+              offset={-70} // Adjust the offset according to your layout
+              duration={500} // Duration of the scroll animation
+              onClick={() => handleLinkClick(index)}
+            >
+              {item.label}
+            </ScrollLink>
           </NavbarItem>
         ))}
+        <NavbarItem>
+          <Button
+            as={Link}
+            color="primary"
+            href="#"
+            variant="bordered"
+            className="border-[#228B22] text-[#228B22] font-bold"
+          >
+            Sign Up
+          </Button>
+        </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent justify="end">
+      <NavbarContent className="flex sm:hidden gap-16" justify="end">
         <NavbarItem>
           <Button
             as={Link}
@@ -102,10 +132,10 @@ const NavbarComponent = () => {
                   : "foreground"
               }
               className="w-full pt-4 text-[#228B22] font-bold"
-              href="#"
+              href={item.href}
               size="lg"
             >
-              {item}
+              {item.label}
             </Link>
           </NavbarMenuItem>
         ))}

@@ -1,521 +1,305 @@
 "use client";
 
 import * as React from "react";
-import { NextUIProvider } from "@nextui-org/react";
-import { Accordion, AccordionItem } from "@nextui-org/react";
-
+import { Button, NextUIProvider } from "@nextui-org/react";
 import Image from "next/image";
-// import Navbar from "./components/Navbar/a";
-import NavbarComponent from "./components/NavbarComponent/page";
+
+import ContactModal from "./components/Contact Modal/page";
+import NavbarComponent from "./components/Navbar Component/page";
 import Footer from "./components/Footer/page";
-import bee2 from "../public/assets/images/Bee/bee_2.svg";
+import ImageSection from "./components/Section/page";
+import FAQAccordion from "./components/FAQ Accordion/page";
+import TamanRumahLebahCard from "./components/Card/Taman Rumah Lebah/page";
+import IntroductionCard from "./components/Card/Introduction/page";
+import GetBeenefitCard from "./components/Card/Get Beenefit/page";
+import CommunityCard from "./components/Card/Community Card/page";
+import TestimonyCard from "./components/Card/Testimony Card/page";
+import StartingUpCard from "./components/Card/Starting Up Card/page";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const faqList = [
+    {
+      question: "Berapa jumlah madu yang dihasilkan?",
+      answer:
+        "Dalam 2-3 minggu, 1 koloni bisa menghasilkan sekitar 2-3 sendok makan madu. Idealnya, untuk mendapatkan produksi penuh, dibutuhkan waktu sekitar 3-4 bulan.",
+    },
+    {
+      question: "Mengapa saya harus memiliki rumah lebah ini?",
+      answer:
+        "Dengan memiliki rumah lebah, Anda dapat membantu penyerbukan tanaman di taman Anda, memenuhi kebutuhan madu personal dan dapat digunakan sebagai sarana edukasi untuk anak-anak.",
+    },
+    {
+      question: "Dari mana asal lebah ini?",
+      answer:
+        "Lebah tanpa sengat secara umum ditemukan di negara tropis. Koloni lebah tanpa sengat kami berasal dari Jawa Barat, Indonesia.",
+    },
+    {
+      question: "Bagaimana cara melakukan panen madu?",
+      answer:
+        "Madu dapat dipanen dengan mengambil kantong madunya, kemudian ditekan. Madu akan keluar secara alami.",
+    },
+    {
+      question: "Berapa lama waktu PO berlangsung?",
+      answer:
+        "Kami membuka proses pemesanan setiap 2 minggu sekali. Informasi lebih lanjut mengenai batch pemesanan dapat ditemukan di akun Instagram kami.",
+    },
+  ];
+
+  const startingUpItems = [
+    {
+      imageSrc: "/assets/images/stingless_bee.svg",
+      title: "Rumah lebah ‘Peek-A-Bee’",
+      description: "Lorem ipsum dolor sit amet",
+      price: "Rp500,000",
+    },
+    {
+      imageSrc: "/assets/images/stingless_bee.svg",
+      title: "Rumah lebah ‘Segitiga’",
+      description: "Lorem ipsum dolor sit amet",
+      price: "Rp500,000",
+    },
+    {
+      imageSrc: "/assets/images/stingless_bee.svg",
+      title: "Rumah lebah ‘Lebah Ganteng’",
+      description: "Lorem ipsum dolor sit amet",
+      price: "Rp500,000",
+    },
+  ];
+
   return (
     <NextUIProvider>
       <main className="flex overflow-hidden min-h-screen flex-col items-center w-full justify-center bg-[#FFFCF5]">
         <NavbarComponent />
 
         <div className="w-full space-y-4 md:space-y-16 py-16 md:pt-12">
-          <section className="taman-ramah-lebah">
-            <div className="w-full flex justify-center items-center pt-8 px-4 sm:pt-16 sm:px-8">
-              <div className="flex flex-col sm:flex-row justify-center items-center rounded-xl bg-[#F1F1F1] sm:rounded-3xl p-4 sm:p-8 border-2 sm:border-4 border-[#228B22]">
-                <div className="sm:hidden flex flex-col justify-center items-center text-center gap-2">
-                  <h1 className="text-[#228B22] tracking-wider font-extrabold text-2xl">
-                    Taman Ramah Lebah
-                  </h1>
-                  <h1 className="text-[#FFB000] tracking-tight font-bold text-sm">
-                    Fun, Beautiful, and Fresh Honey!
-                  </h1>
-                </div>
+          <section id="taman-ramah-lebah">
+            <TamanRumahLebahCard />
+          </section>
 
-                <div className="flex w-60 sm:w-1/4 py-4 sm:px-4 justify-center items-center">
+          <section id="introduction">
+            <ImageSection
+              mobileSrc="/assets/images/introduction_sm.svg"
+              desktopSrc="/assets/images/introduction.svg"
+              mobileWidth={300}
+              desktopWidth={440}
+              mobileHeight={40}
+              desktopHeight={40}
+              alt="starting-up"
+            />
+            <IntroductionCard />
+          </section>
+
+          <section id="get-beenefit">
+            <ImageSection
+              mobileSrc="/assets/images/get-beenefit_sm.svg"
+              desktopSrc="/assets/images/get-beenefit.svg"
+              mobileWidth={400}
+              desktopWidth={640}
+              mobileHeight={90}
+              desktopHeight={40}
+              alt="starting-up"
+            />
+
+            <div className="flex flex-col sm:flex-row">
+              <GetBeenefitCard
+                stepNumber={1}
+                title="Konsultasi"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                imageSrc="/assets/images/stingless_bee.svg"
+              />
+
+              <GetBeenefitCard
+                stepNumber={2}
+                title="Pengiriman"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                imageSrc="/assets/images/stingless_bee.svg"
+              />
+
+              <GetBeenefitCard
+                stepNumber={3}
+                title="Pemasangan"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                imageSrc="/assets/images/stingless_bee.svg"
+              />
+            </div>
+          </section>
+
+          <section id="community">
+            <ImageSection
+              mobileSrc="/assets/images/community_sm.svg"
+              desktopSrc="/assets/images/community.svg"
+              mobileWidth={400}
+              desktopWidth={640}
+              mobileHeight={90}
+              desktopHeight={40}
+              alt="starting-up"
+            />
+
+            <div className="flex flex-col sm:flex-row">
+              <CommunityCard
+                imageSrc="/assets/images/stingless_bee.svg"
+                title="125 Beekeepers"
+              />
+
+              <CommunityCard
+                imageSrc="/assets/images/stingless_bee.svg"
+                title="2 Millions Bee"
+                subtitle="and ZERO stings"
+              />
+
+              <CommunityCard
+                imageSrc="/assets/images/stingless_bee.svg"
+                title="Rp120,000,000"
+                subtitle="bee products traded monthly"
+              />
+            </div>
+          </section>
+
+          <section id="testimony">
+            <ImageSection
+              mobileSrc="/assets/images/testimonial_sm.svg"
+              desktopSrc="/assets/images/testimonial.svg"
+              mobileWidth={240}
+              desktopWidth={500}
+              mobileHeight={90}
+              desktopHeight={40}
+              alt="starting-up"
+            />
+
+            <div className="flex flex-col sm:flex-row">
+              <TestimonyCard
+                imageSrc="/assets/images/stingless_bee.svg"
+                title="The bees are very cute and easy to take care of"
+                author="Aso, entrepreneur"
+              />
+
+              <TestimonyCard
+                imageSrc="/assets/images/stingless_bee.svg"
+                title="The bees are very cute and easy to take care of"
+                author="Aso, entrepreneur"
+              />
+
+              <TestimonyCard
+                imageSrc="/assets/images/stingless_bee.svg"
+                title="The bees are very cute and easy to take care of"
+                author="Aso, entrepreneur"
+              />
+            </div>
+          </section>
+
+          <section id="faq">
+            <ImageSection
+              mobileSrc="/assets/images/faq_sm.svg"
+              desktopSrc="/assets/images/faq.svg"
+              mobileWidth={160}
+              desktopWidth={300}
+              mobileHeight={60}
+              desktopHeight={40}
+              alt="starting-up"
+            />
+
+            <FAQAccordion faqList={faqList} />
+          </section>
+
+          <section id="contact">
+            <div className="w-full flex flex-col justify-center items-center pt-16 gap-4 px-4 sm:px-16 text-black">
+              <p className="text-[#228B22] font-bold text-xl">
+                Belum yakin apakah tempat Anda cocok untuk memelihara stingless
+                bees?
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center items-center sm:items-end gap-4 sm:gap-8">
+                <Button
+                  size="lg"
+                  radius="lg"
+                  className="bg-[#FFD67A] font-bold p-8"
+                >
+                  Lihat koleksi taman stingless bees
+                </Button>
+                <div className="flex flex-col justify-center items-center gap-4">
                   <Image
-                    src="/assets/images/taman_ramah_lebah.svg"
-                    width={360}
-                    height={360}
-                    alt="taman rumah lebah"
+                    src="/assets/images/Bee/bee_5.svg"
+                    width={100}
+                    height={20}
+                    alt="faq"
                     draggable="false"
                   />
+                  <p className="text-[#228B22] font-bold text-2xl">Atau</p>
                 </div>
-
-                <div className="flex flex-col sm:w-1/2 justify-center items-center gap-2">
-                  <h1 className="hidden sm:flex sm:text-[#228B22] tracking-wider font-extrabold md:text-3xl sm:text-2xl">
-                    Taman Ramah Lebah
-                  </h1>
-                  <h1 className="hidden sm:flex sm:text-[#FFB000] tracking-tight font-bold xl:text-base md:text-md sm:text-sm">
-                    Fun, Beautiful, and Fresh Honey!
-                  </h1>
-                  <h1 className="text-black text-center text-sm md:text-base lg:text-lg">
-                    <span className="text-[#228B22] font-extrabold">
-                      Taman ramah lebah
-                    </span>{" "}
-                    adalah taman yang dirancang khusus untuk memberikan habitat
-                    yang sesuai bagi lebah. Taman ini berisi berbagai tanaman
-                    yang menawarkan nektar dan serbuk sari yang merupakan sumber
-                    makanan penting bagi lebah. Taman ramah lebah ini
-                    berkontribusi pada keanekaragaman hayati dan kesehatan
-                    ekosistem secara keseluruhan.
-                  </h1>
-                </div>
-
-                <div className="flex w-28 sm:w-1/8 md:w-1/4 py-4 sm:px-4 justify-center items-center">
-                  <Image
-                    src="/assets/images/Bee/bee_1.svg"
-                    width={160}
-                    height={160}
-                    alt="bee"
-                    draggable="false"
-                  />
-                </div>
+                <Button
+                  size="lg"
+                  radius="lg"
+                  className="bg-[#F1F1F1] border-1 border-[#228B22] font-bold p-8"
+                >
+                  Kontak admin untuk konsultasi
+                </Button>
               </div>
             </div>
           </section>
 
-          <section className="introduction">
-            <div className="hidden sm:flex w-full">
-              <Image
-                src="/assets/images/introduction.svg"
-                width={440}
-                height={40}
-                alt="introduction-section"
-                draggable="false"
-              />
-            </div>
+          <section id="starting-up">
+            <ImageSection
+              mobileSrc="/assets/images/starting-up_sm.svg"
+              desktopSrc="/assets/images/starting-up.svg"
+              mobileWidth={200}
+              desktopWidth={500}
+              mobileHeight={65}
+              desktopHeight={80}
+              alt="starting-up"
+            />
 
-            <div className="sm:hidden flex w-56">
-              <Image
-                src="/assets/images/a.svg"
-                width={440}
-                height={40}
-                alt="introduction-section"
-                draggable="false"
-              />
-            </div>
+            <div className="flex flex-col text-black justify-center items-center gap-8 pt-4 w-full px-4 sm:px-8 md:pt-8">
+              <p className="text-xl ">
+                View some of our beginner friendly starter packs, or{" "}
+                <span className="font-bold">see more at our marketplace</span>
+              </p>
 
-            <div className="flex justify-center items-center pt-8 w-full px-4 sm:px-20 md:px-40 md:pt-16">
-              <div className="flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-8 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
-                <h1 className="sm:hidden text-[#228B22] text-center font-bold text-2xl">
-                  Meet the Stingless Bees
-                </h1>
-                <div className="w-60 md:w-full justify-center items-center">
-                  <Image
-                    src="/assets/images/stingless_bee.svg"
-                    width={450}
-                    height={450}
-                    alt="stingless bee"
-                    draggable="false"
+              <div className="flex flex-col sm:flex-row">
+                {startingUpItems.map((item, index) => (
+                  <StartingUpCard
+                    key={index}
+                    imageSrc={item.imageSrc}
+                    title={item.title}
+                    description={item.description}
+                    price={item.price}
                   />
-                </div>
-                <div className="flex flex-col justify-center text-center items-center gap-8">
-                  <h1 className="hidden sm:flex text-[#228B22] font-bold text-2xl md:text-4xl">
-                    Meet the Stingless Bees
-                  </h1>
-                  <h1 className="text-black text-sm md:text-lg">
-                    <span className="text-[#FFB000] font-bold">
-                      Lebah tanpa sengat
-                    </span>{" "}
-                    adalah kelompok lebah yang, sesuai dengan namanya, tidak
-                    memiliki sengat. Lebah-lebah ini ditemukan di daerah tropis
-                    dan subtropis. Mereka dikenal karena dengan ukurannya yang
-                    kecil, perilaku sosial yang khas, serta produksi madu dan
-                    propolis.
-                  </h1>
-                </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <Button
+                  size="lg"
+                  radius="full"
+                  onPress={() => setIsModalOpen(true)}
+                  className="bg-[#228B22] text-white text-2xl font-bold px-12 py-8"
+                >
+                  Hubungi Saya
+                </Button>
+                <ContactModal
+                  isOpen={isModalOpen}
+                  onOpenChange={setIsModalOpen}
+                />
+                <p>*) Tim kami akan segera menghubungi anda</p>
               </div>
             </div>
           </section>
 
-          <section className="get-beenefit">
-            <div className="sm:hidden flex w-80">
-              <Image
-                src="/assets/images/get-beenefit_sm.svg"
-                width={400}
-                height={90}
-                alt="get-beenefit"
-                draggable="false"
-              />
-            </div>
+          <section id="article">
+            <ImageSection
+              mobileSrc="/assets/images/article_sm.svg"
+              desktopSrc="/assets/images/article.svg"
+              mobileWidth={200}
+              desktopWidth={400}
+              mobileHeight={65}
+              desktopHeight={100}
+              alt="starting-up"
+            />
 
-            <div className="hidden sm:flex w-full">
-              <Image
-                src="/assets/images/get-beenefit.svg"
-                width={640}
-                height={40}
-                alt="get-beenefit"
-                draggable="false"
-              />
-            </div>
-
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full px-4 sm:px-8 md:pt-16">
-              <div className="sm:hidden flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-4 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
-                <div className="flex justify-center rounded-3xl px-16 py-1 bg-[#FFD67A] border-2 md:border-4 w-2/3 border-[#228B22]">
-                  <p className="font-bold text-[#228B22]">Step 1</p>
-                </div>
-                <p className="font-bold text-[#228B22] text-xl">Konsultasi</p>
-                <div className="w-full flex justify-center items-center">
-                  <Image
-                    src="/assets/images/stingless_bee.svg"
-                    width={150}
-                    height={150}
-                    alt="stingless bee"
-                    draggable="false"
-                  />
-                </div>
-                <p className="font-normal text-black text-base text-center">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div className="sm:hidden flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-4 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
-                <div className="flex justify-center rounded-3xl px-16 py-1 bg-[#FFD67A] border-2 md:border-4 w-2/3 border-[#228B22]">
-                  <p className="font-bold text-[#228B22]">Step 2</p>
-                </div>
-                <p className="font-bold text-[#228B22] text-xl">Pengiriman</p>
-                <div className="w-full flex justify-center items-center">
-                  <Image
-                    src="/assets/images/stingless_bee.svg"
-                    width={150}
-                    height={150}
-                    alt="stingless bee"
-                    draggable="false"
-                  />
-                </div>
-                <p className="font-normal text-black text-base text-center">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div className="sm:hidden flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-4 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
-                <div className="flex justify-center rounded-3xl px-16 py-1 bg-[#FFD67A] border-2 md:border-4 w-2/3 border-[#228B22]">
-                  <p className="font-bold text-[#228B22]">Step 3</p>
-                </div>
-                <p className="font-bold text-[#228B22] text-xl">Pemasangan</p>
-                <div className="w-full flex justify-center items-center">
-                  <Image
-                    src="/assets/images/stingless_bee.svg"
-                    width={150}
-                    height={150}
-                    alt="stingless bee"
-                    draggable="false"
-                  />
-                </div>
-                <p className="font-normal text-black text-base text-center">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-
-              <div className="hidden sm:flex flex-col gap-4 justify-center items-center rounded-3xl px-4 py-4 bg-[#F1F1F1] border-4 border-[#FFD67A]">
-                <div className="flex justify-center rounded-3xl sm:px-8 md:px-4 bg-[#FFD67A] border-1 w-1/2 border-[#228B22]">
-                  <p className="font-bold text-[#228B22]">Step 1</p>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-full flex justify-center items-center">
-                    <Image
-                      src="/assets/images/stingless_bee.svg"
-                      width={150}
-                      height={150}
-                      alt="stingless bee"
-                      draggable="false"
-                    />
-                  </div>
-                  <div className="w-full flex flex-col gap-4 ">
-                    <p className="font-bold text-[#228B22] text-base lg:text-xl">
-                      Konsultasi
-                    </p>
-                    <p className="font-normal text-black text-xs lg:text-sm">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="hidden sm:flex flex-col gap-4 justify-center items-center rounded-3xl px-4 py-4 bg-[#F1F1F1] border-4 border-[#FFD67A]">
-                <div className="flex justify-center rounded-3xl sm:px-8 md:px-4 bg-[#FFD67A] border-1 w-1/2 border-[#228B22]">
-                  <p className="font-bold text-[#228B22]">Step 2</p>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-full flex justify-center items-center">
-                    <Image
-                      src="/assets/images/stingless_bee.svg"
-                      width={150}
-                      height={150}
-                      alt="stingless bee"
-                      draggable="false"
-                    />
-                  </div>
-                  <div className="w-full flex flex-col gap-4 ">
-                    <p className="font-bold text-[#228B22] text-base lg:text-xl">
-                      Pengiriman
-                    </p>
-                    <p className="font-normal text-black text-xs lg:text-sm">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="hidden sm:flex flex-col gap-4 justify-center items-center rounded-3xl px-4 py-4 bg-[#F1F1F1] border-4 border-[#FFD67A]">
-                <div className="flex justify-center rounded-3xl sm:px-8 md:px-4 bg-[#FFD67A] border-1 w-1/2 border-[#228B22]">
-                  <p className="font-bold text-[#228B22]">Step 3</p>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-full flex justify-center items-center">
-                    <Image
-                      src="/assets/images/stingless_bee.svg"
-                      width={150}
-                      height={150}
-                      alt="stingless bee"
-                      draggable="false"
-                    />
-                  </div>
-                  <div className="w-full flex flex-col gap-4 ">
-                    <p className="font-bold text-[#228B22] text-base lg:text-xl">
-                      Pemasangan
-                    </p>
-                    <p className="font-normal text-black text-xs lg:text-sm">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="community">
-            <div className="sm:hidden flex w-72">
-              <Image
-                src="/assets/images/community_sm.svg"
-                width={400}
-                height={90}
-                alt="community"
-                draggable="false"
-              />
-            </div>
-
-            <div className="hidden sm:flex w-full">
-              <Image
-                src="/assets/images/community.svg"
-                width={640}
-                height={40}
-                alt="community"
-                draggable="false"
-              />
-            </div>
-
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full px-4 sm:px-8 md:pt-16">
-              <div className="flex w-full justify-start items-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
-                <div className="w-fit flex justify-center items-center">
-                  <Image
-                    src="/assets/images/stingless_bee.svg"
-                    width={150}
-                    height={150}
-                    alt="stingless bee"
-                    draggable="false"
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <h1 className="text-[#228B22] font-bold text-xl lg:text-2xl">
-                    125 Beekeepers
-                  </h1>
-                </div>
-              </div>
-
-              <div className="flex w-full justify-start items-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
-                <div className="w-fit flex justify-center items-center">
-                  <Image
-                    src="/assets/images/stingless_bee.svg"
-                    width={150}
-                    height={150}
-                    alt="stingless bee"
-                    draggable="false"
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <h1 className="text-[#228B22] font-bold text-xl lg:text-2xl">
-                    2 Millions Bee
-                  </h1>
-                  <h1 className="text-[#228B22] tracking-tight font-normal text-base md:text-lg">
-                    and ZERO stings
-                  </h1>
-                </div>
-              </div>
-
-              <div className="flex w-full justify-start items-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
-                <div className="w-fit flex justify-center items-center">
-                  <Image
-                    src="/assets/images/stingless_bee.svg"
-                    width={150}
-                    height={150}
-                    alt="stingless bee"
-                    draggable="false"
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <h1 className="text-[#228B22] font-bold text-xl lg:text-2xl">
-                    Rp120,000,000
-                  </h1>
-                  <h1 className="text-[#228B22] tracking-tight font-normal text-base md:text-lg">
-                    bee products traded monthly
-                  </h1>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="testimony">
-            <div className="sm:hidden flex w-80">
-              <Image
-                src="/assets/images/testimonial_sm.svg"
-                width={240}
-                height={90}
-                alt="testimonial"
-                draggable="false"
-              />
-            </div>
-
-            <div className="hidden sm:flex w-full">
-              <Image
-                src="/assets/images/testimonial.svg"
-                width={500}
-                height={40}
-                alt="testimonial"
-                draggable="false"
-              />
-            </div>
-
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full px-4 sm:px-8 md:pt-16">
-              <div className="flex flex-col justify-center items-center text-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
-                <div className="w-fit flex justify-center items-center">
-                  <Image
-                    src="/assets/images/stingless_bee.svg"
-                    width={150}
-                    height={150}
-                    alt="stingless bee"
-                    draggable="false"
-                  />
-                </div>
-                <h1 className="text-black font-bold text-xl lg:text-2xl">
-                  The bees are very cute and easy to take care of
-                </h1>
-                <h1 className="text-[#228B22] tracking-tight font-normal text-md md:text-base">
-                  Aso, enterpreneur
-                </h1>
-              </div>
-              <div className="flex flex-col justify-center items-center text-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
-                <div className="w-fit flex justify-center items-center">
-                  <Image
-                    src="/assets/images/stingless_bee.svg"
-                    width={150}
-                    height={150}
-                    alt="stingless bee"
-                    draggable="false"
-                  />
-                </div>
-                <h1 className="text-black font-bold text-xl lg:text-2xl">
-                  The bees are very cute and easy to take care of
-                </h1>
-                <h1 className="text-[#228B22] tracking-tight font-normal text-md md:text-base">
-                  Aso, enterpreneur
-                </h1>
-              </div>
-              <div className="flex flex-col justify-center items-center text-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-2 md:border-4 border-[#FFD67A] gap-8 bg-[#F1F1F1]">
-                <div className="w-fit flex justify-center items-center">
-                  <Image
-                    src="/assets/images/stingless_bee.svg"
-                    width={150}
-                    height={150}
-                    alt="stingless bee"
-                    draggable="false"
-                  />
-                </div>
-                <h1 className="text-black font-bold text-xl lg:text-2xl">
-                  The bees are very cute and easy to take care of
-                </h1>
-                <h1 className="text-[#228B22] tracking-tight font-normal text-md md:text-base">
-                  Aso, enterpreneur
-                </h1>
-              </div>
-            </div>
-          </section>
-
-          <section className="faq">
-            <div className="sm:hidden flex w-80">
-              <Image
-                src="/assets/images/faq_sm.svg"
-                width={160}
-                height={60}
-                alt="faq"
-                draggable="false"
-              />
-            </div>
-
-            <div className="hidden sm:flex w-full">
-              <Image
-                src="/assets/images/faq.svg"
-                width={300}
-                height={40}
-                alt="faq"
-                draggable="false"
-              />
-            </div>
-            <div className="flex justify-center items-center pt-16 gap-16 px-4 sm:px-16 text-black">
-              <Accordion variant="splitted">
-                <AccordionItem
-                  key="1"
-                  aria-label="Accordion 1"
-                  title="Berapa jumlah madu yang dihasilkan?"
-                  className="border-2 border-[#228B22]"
-                >
-                  Dalam 2-3 minggu, 1 koloni bisa menghasilkan sekitar 2-3
-                  sendok makan madu. Idealnya, untuk mendapatkan produksi penuh,
-                  dibutuhkan waktu sekitar 3-4 bulan.
-                </AccordionItem>
-                <AccordionItem
-                  key="2"
-                  aria-label="Accordion 2"
-                  title="Mengapa saya harus memiliki rumah lebah ini?"
-                  className="border-2 border-[#228B22]"
-                >
-                  Dengan memiliki rumah lebah, Anda dapat membantu penyerbukan
-                  tanaman di taman Anda, memenuhi kebutuhan madu personal dan
-                  dapat digunakan sebagai sarana edukasi untuk anak-anak.
-                </AccordionItem>
-                <AccordionItem
-                  key="3"
-                  aria-label="Accordion 3"
-                  title="Dari mana asal lebah ini?"
-                  className="border-2 border-[#228B22]"
-                >
-                  Lebah tanpa sengat secara umum ditemukan di negara tropis.
-                  Koloni lebah tanpa sengat kami berasal dari Jawa Barat,
-                  Indonesia.
-                </AccordionItem>
-                <AccordionItem
-                  key="4"
-                  aria-label="Accordion 4"
-                  title="Bagaimana cara melakukan panen madu?"
-                  className="border-2 border-[#228B22]"
-                >
-                  Madu dapat dipanen dengan mengambil kantong madunya, kemudian
-                  ditekan. Madu akan keluar secara alami.
-                </AccordionItem>
-                <AccordionItem
-                  key="5"
-                  aria-label="Accordion 5"
-                  title="Berapa lama waktu PO berlangsung?"
-                  className="border-2 border-[#228B22]"
-                >
-                  Kami membuka proses pemesanan setiap 2 minggu sekali.
-                  Informasi lebih lanjut mengenai batch pemesanan dapat
-                  ditemukan di akun Instagram kami.
-                </AccordionItem>
-              </Accordion>
+            <div className="flex flex-col text-black justify-center items-center gap-8 pt-4 w-full px-4 sm:px-8 md:pt-8">
+              <p className="text-xl ">
+                Learn more about the bees and beekeeping
+              </p>
             </div>
           </section>
         </div>
