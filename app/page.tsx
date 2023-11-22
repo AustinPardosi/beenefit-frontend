@@ -1,14 +1,18 @@
 "use client";
 
 import * as React from "react";
-import { Button, NextUIProvider } from "@nextui-org/react";
+import {
+  Accordion,
+  AccordionItem,
+  Button,
+  NextUIProvider,
+} from "@nextui-org/react";
 import Image from "next/image";
 
 import ContactModal from "./components/Contact Modal/page";
 import NavbarComponent from "./components/Navbar Component/page";
 import Footer from "./components/Footer/page";
 import ImageSection from "./components/Section/page";
-import FAQAccordion from "./components/FAQ Accordion/page";
 import TamanRumahLebahCard from "./components/Card/Taman Rumah Lebah/page";
 import IntroductionCard from "./components/Card/Introduction/page";
 import GetBeenefitCard from "./components/Card/Get Beenefit/page";
@@ -200,7 +204,59 @@ export default function Home() {
               alt="starting-up"
             />
 
-            <FAQAccordion faqList={faqList} />
+            <div className="flex justify-center items-center pt-16 gap-16 px-4 sm:px-16 text-black">
+              <Accordion variant="splitted">
+                <AccordionItem
+                  key="1"
+                  aria-label="Accordion 1"
+                  title="Berapa jumlah madu yang dihasilkan?"
+                  className="border-2 border-[#228B22]"
+                >
+                  Dalam 2-3 minggu, 1 koloni bisa menghasilkan sekitar 2-3
+                  sendok makan madu. Idealnya, untuk mendapatkan produksi penuh,
+                  dibutuhkan waktu sekitar 3-4 bulan.
+                </AccordionItem>
+                <AccordionItem
+                  key="2"
+                  aria-label="Accordion 2"
+                  title="Mengapa saya harus memiliki rumah lebah ini?"
+                  className="border-2 border-[#228B22]"
+                >
+                  Dengan memiliki rumah lebah, Anda dapat membantu penyerbukan
+                  tanaman di taman Anda, memenuhi kebutuhan madu personal dan
+                  dapat digunakan sebagai sarana edukasi untuk anak-anak.
+                </AccordionItem>
+                <AccordionItem
+                  key="3"
+                  aria-label="Accordion 3"
+                  title="Dari mana asal lebah ini?"
+                  className="border-2 border-[#228B22]"
+                >
+                  Lebah tanpa sengat secara umum ditemukan di negara tropis.
+                  Koloni lebah tanpa sengat kami berasal dari Jawa Barat,
+                  Indonesia.
+                </AccordionItem>
+                <AccordionItem
+                  key="4"
+                  aria-label="Accordion 4"
+                  title="Bagaimana cara melakukan panen madu?"
+                  className="border-2 border-[#228B22]"
+                >
+                  Madu dapat dipanen dengan mengambil kantong madunya, kemudian
+                  ditekan. Madu akan keluar secara alami.
+                </AccordionItem>
+                <AccordionItem
+                  key="5"
+                  aria-label="Accordion 5"
+                  title="Berapa lama waktu PO berlangsung?"
+                  className="border-2 border-[#228B22]"
+                >
+                  Kami membuka proses pemesanan setiap 2 minggu sekali.
+                  Informasi lebih lanjut mengenai batch pemesanan dapat
+                  ditemukan di akun Instagram kami.
+                </AccordionItem>
+              </Accordion>
+            </div>
           </section>
 
           <section id="contact">
