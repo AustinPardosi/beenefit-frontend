@@ -4,7 +4,7 @@ import Link from "next/link";
 function Footer() {
   return (
     <>
-      <footer className="bg-[#FFD67A] w-full justify-between text-black p-8 flex flex-col sm:flex-row">
+      <footer className="bg-[#FFD67A] w-full justify-between text-black px-8 py-6 flex flex-col sm:flex-row">
         {/* Logo Section */}
         {/* Mobile */}
         <div className="flex sm:hidden justify-between items-start">
@@ -26,8 +26,8 @@ function Footer() {
         <div className="hidden sm:flex items-center justify-center">
           <Image
             src="/assets/images/beenefit_logo.svg"
-            width={300}
-            height={300}
+            width={200}
+            height={200}
             alt="beenefit logo"
             draggable="false"
           />
@@ -50,7 +50,7 @@ function Footer() {
             </p>
             <p>+62 858-6017-7309 (whatsapp admin Beenefit)</p>
           </div>
-          <div className="flex flex-col sm:flex-row justify-between items-center pt-2 w-full gap-4 sm:gap-0">
+          <div className="flex flex-row justify-start items-center pt-2 w-full gap-4">
             <div className="flex flex-col justify-center items-center gap-2">
               <Link
                 href="https://www.instagram.com/beenefit.stinglessbees/"
@@ -64,7 +64,6 @@ function Footer() {
                   draggable="false"
                 />
               </Link>
-              <p>@beenefit.stinglessbees</p>
             </div>
             <div className="flex flex-col justify-center items-center gap-2">
               <Link href="mailto:beenefit.info@gmail.com" passHref>
@@ -76,7 +75,6 @@ function Footer() {
                   draggable="false"
                 />
               </Link>
-              <p>beenefit.info@gmail.com</p>
             </div>
             <div className="flex flex-col justify-center items-center gap-2">
               <Link href="https://www.linkedin.com/company/beenefit" passHref>
@@ -88,7 +86,6 @@ function Footer() {
                   draggable="false"
                 />
               </Link>
-              <p>Beenefit</p>
             </div>
           </div>
         </div>

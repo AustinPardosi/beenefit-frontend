@@ -30,6 +30,15 @@ const NavbarComponent = () => {
     setIsActive(index);
   };
 
+  const handleMobileLinkClick = (index: number) => {
+    setIsActive(index);
+    setIsMenuOpen(false);
+  };
+
+  const handleClick = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
     <Navbar
       shouldHideOnScroll
@@ -62,6 +71,7 @@ const NavbarComponent = () => {
             width={100}
             alt="Beenefit Logo"
             src="/assets/images/beenefit_logo.svg"
+            onClick={handleClick}
           />
         </NavbarBrand>
       </NavbarContent>
@@ -69,15 +79,6 @@ const NavbarComponent = () => {
       <NavbarContent className="hidden sm:flex gap-16" justify="end">
         {menuItems.map((item, index) => (
           <NavbarItem key={index} className="cursor-pointer">
-            {/* <Link
-              className={`text-[#228B22] font-bold ${
-                isActive === index ? "underline underline-offset-8" : ""
-              }`}
-              href={item.href}
-              onClick={() => handleLinkClick(index)}
-            >
-              {item.label}
-            </Link> */}
             <ScrollLink
               className={`text-[#228B22] font-bold ${
                 isActive === index ? "underline underline-offset-8" : ""
@@ -85,14 +86,28 @@ const NavbarComponent = () => {
               to={item.href}
               spy={true}
               smooth={true}
-              offset={-70} // Adjust the offset according to your layout
-              duration={500} // Duration of the scroll animation
+              offset={-70}
+              duration={500}
               onClick={() => handleLinkClick(index)}
             >
               {item.label}
             </ScrollLink>
           </NavbarItem>
         ))}
+        {/* <NavbarItem>
+          <Button
+            as={Link}
+            color="primary"
+            href="#"
+            variant="bordered"
+            className="border-[#228B22] text-[#228B22] font-bold"
+          >
+            Sign Up
+          </Button>
+        </NavbarItem> */}
+      </NavbarContent>
+
+      {/* <NavbarContent className="flex sm:hidden gap-16" justify="end">
         <NavbarItem>
           <Button
             as={Link}
@@ -104,26 +119,17 @@ const NavbarComponent = () => {
             Sign Up
           </Button>
         </NavbarItem>
-      </NavbarContent>
+      </NavbarContent> */}
 
-      <NavbarContent className="flex sm:hidden gap-16" justify="end">
-        <NavbarItem>
-          <Button
-            as={Link}
-            color="primary"
-            href="#"
-            variant="bordered"
-            className="border-[#228B22] text-[#228B22] font-bold"
-          >
-            Sign Up
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
-
-      <NavbarMenu>
+      <NavbarMenu className="gap-4">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
+            <ScrollLink
+              to={item.href}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
               color={
                 index === 2
                   ? "primary"
@@ -131,12 +137,11 @@ const NavbarComponent = () => {
                   ? "danger"
                   : "foreground"
               }
+              onClick={() => handleMobileLinkClick(index)}
               className="w-full pt-4 text-[#228B22] font-bold"
-              href={item.href}
-              size="lg"
             >
               {item.label}
-            </Link>
+            </ScrollLink>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>

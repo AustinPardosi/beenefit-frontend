@@ -73,7 +73,7 @@ export default function Home() {
 
   return (
     <NextUIProvider>
-      <main className="flex overflow-hidden min-h-screen flex-col items-center w-full justify-center bg-[#FFFCF5]">
+      <main className="flex overflow-hidden min-h-screen flex-col items-center w-full justify-center bg-[#FFF7E5]">
         <NavbarComponent />
 
         <div className="w-full space-y-4 md:space-y-16 py-16 md:pt-12">
@@ -144,16 +144,19 @@ export default function Home() {
               <CommunityCard
                 imageSrc="/assets/images/com_1.svg"
                 title="250 rumah lebah"
+                description="Beenefit telah membuat 250+ rumah lebah"
               />
 
               <CommunityCard
                 imageSrc="/assets/images/com_2.svg"
                 title="5 bee friendly garden proyek"
+                description="Beenefit telah memiliki 5 proyek taman"
               />
 
               <CommunityCard
                 imageSrc="/assets/images/com_3.svg"
                 title="3 collaboration home influencer"
+                description="Beenefit telah menjalin ke 3 home influencer"
               />
             </div>
           </section>
@@ -174,6 +177,7 @@ export default function Home() {
                 imageSrc="/assets/images/testi_1.svg"
                 description="Ini awalnya gegara liat di rumah tetangga punya lebah klanceng dari @beenefit.stinglessbees ..."
                 author="Rumah Terang"
+                linkSrc="https://www.instagram.com/p/Cz-VswZS04R/?igshid=MzRlODBiNWFlZA%3D%3D&img_index=6"
               />
             </div>
           </section>
@@ -200,7 +204,7 @@ export default function Home() {
                   key="1"
                   aria-label="Accordion 1"
                   title="Berapa jumlah madu yang dihasilkan?"
-                  className="border-2 border-[#228B22]"
+                  className="border-1 border-[#228B22]"
                 >
                   Dalam 2-3 minggu, 1 koloni bisa menghasilkan sekitar 2-3
                   sendok makan madu. Idealnya, untuk mendapatkan produksi penuh,
@@ -210,7 +214,7 @@ export default function Home() {
                   key="2"
                   aria-label="Accordion 2"
                   title="Mengapa saya harus memiliki rumah lebah ini?"
-                  className="border-2 border-[#228B22]"
+                  className="border-1 border-[#228B22]"
                 >
                   Dengan memiliki rumah lebah, Anda dapat membantu penyerbukan
                   tanaman di taman Anda, memenuhi kebutuhan madu personal dan
@@ -220,7 +224,7 @@ export default function Home() {
                   key="3"
                   aria-label="Accordion 3"
                   title="Dari mana asal lebah ini?"
-                  className="border-2 border-[#228B22]"
+                  className="border-1 border-[#228B22]"
                 >
                   Lebah tanpa sengat secara umum ditemukan di negara tropis.
                   Koloni lebah tanpa sengat kami berasal dari Jawa Barat,
@@ -230,7 +234,7 @@ export default function Home() {
                   key="4"
                   aria-label="Accordion 4"
                   title="Bagaimana cara melakukan panen madu?"
-                  className="border-2 border-[#228B22]"
+                  className="border-1 border-[#228B22]"
                 >
                   Madu dapat dipanen dengan mengambil kantong madunya, kemudian
                   ditekan. Madu akan keluar secara alami.
@@ -239,7 +243,7 @@ export default function Home() {
                   key="5"
                   aria-label="Accordion 5"
                   title="Berapa lama waktu PO berlangsung?"
-                  className="border-2 border-[#228B22]"
+                  className="border-1 border-[#228B22]"
                 >
                   Kami membuka proses pemesanan setiap 2 minggu sekali.
                   Informasi lebih lanjut mengenai batch pemesanan dapat
@@ -260,7 +264,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     radius="lg"
-                    className="bg-[#FFD67A] font-bold p-4 sm:p-8"
+                    className="bg-[#FFD67A] border-1 border-[#228B22] font-bold p-4 sm:p-8"
                   >
                     Lihat koleksi taman stingless bees
                   </Button>
@@ -279,7 +283,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     radius="lg"
-                    className="bg-[#F1F1F1] border-1 border-[#228B22] font-bold p-4 sm:p-8"
+                    className="bg-white border-1 border-[#228B22] font-bold p-4 sm:p-8"
                   >
                     Kontak admin untuk konsultasi
                   </Button>

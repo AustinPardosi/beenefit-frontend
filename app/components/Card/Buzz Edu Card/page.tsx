@@ -15,7 +15,7 @@ const BuzzEduCard: React.FC<BuzzEduCardProps> = ({
   description,
 }) => {
   return (
-    <Card className="py-4 w-80 h-96">
+    <Card className="py-4 w-80 h-96 bg-white border-1 border-[#FFD67A]">
       <CardHeader className="pt-2 px-4 flex-col items-center">
         <Image
           alt="Card background"
