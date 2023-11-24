@@ -3,11 +3,13 @@ import Image from "next/image";
 
 const IntroductionCard: React.FC = () => {
   return (
-    <div className="flex justify-center items-center pt-8 w-full px-4 sm:px-20 md:px-40 md:pt-16">
-      <div className="flex flex-col sm:flex-row sm:gap-12 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-8 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
+    <div className="flex justify-center items-center pt-8 w-full px-4 sm:px-20 md:px-60 md:pt-16">
+      <div className="flex flex-col sm:flex-row sm:gap-20 justify-center items-center rounded-xl md:rounded-3xl px-4 space-y-4 md:px-16 py-8 border-2 bg-[#F1F1F1] md:border-4 border-[#FFD67A]">
+        {/* Mobile */}
         <h1 className="sm:hidden text-[#228B22] text-center font-bold text-2xl">
           Meet the Stingless Bees
         </h1>
+
         <div className="w-60 md:w-full justify-center items-center">
           <Image
             src="/assets/images/stingless_bee.svg"

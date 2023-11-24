@@ -10,6 +10,8 @@ import {
   Input,
   Button,
 } from "@nextui-org/react";
+import axios from "axios";
+import Link from "next/link";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -37,10 +39,29 @@ const ContactModal: React.FC<ContactModalProps> = ({
     onOpenChange(false);
   };
 
-  const handleSend = () => {
-    // Handle the send action, you can add your logic here
-    console.log("Sending data:", namaValue, whatsappValue);
-    // Close the modal after sending
+  const handleSend = async () => {
+    try {
+      // Send data to the Next.js API route
+      const response = await fetch(`/api/submit`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: namaValue,
+          phone: whatsappValue,
+        }),
+      });
+
+      if (response.ok) {
+        console.log("Data sent successfully");
+      } else {
+        console.error("Failed to send data:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error sending data:", error);
+    }
+
     handleClose();
   };
 
@@ -125,13 +146,15 @@ const ContactModal: React.FC<ContactModalProps> = ({
               </ModalBody>
             </div>
             <ModalFooter>
-              <Button
-                radius="full"
-                className="bg-[#228B22] text-white text-md font-bold px-12 justify-end"
-                onPress={handleClose}
-              >
-                Kontak Kami
-              </Button>
+              <Link href="https://linktr.ee/beenefit">
+                <Button
+                  radius="full"
+                  className="bg-[#228B22] text-white text-md font-bold px-12 justify-end"
+                  onPress={handleClose}
+                >
+                  Kontak Kami
+                </Button>
+              </Link>
             </ModalFooter>
           </>
         )}

@@ -20,10 +20,10 @@ const NavbarComponent = () => {
   const [isActive, setIsActive] = useState(0);
 
   const menuItems = [
-    { label: "The Bees", href: "" },
+    { label: "The Bees", href: "introduction" },
     { label: "Community", href: "community" },
     { label: "FAQ", href: "faq" },
-    { label: "Starting Up", href: "" },
+    { label: "Starting Up", href: "starting-up" },
   ];
 
   const handleLinkClick = (index: number) => {
@@ -37,7 +37,7 @@ const NavbarComponent = () => {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="full"
-      className="bg-[#FFD67A] w-screen sm:py-2 z-10 fixed sm:px-8"
+      className="bg-[#FFD67A] w-screen sm:py-2 z-20 fixed sm:px-8"
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
@@ -68,7 +68,7 @@ const NavbarComponent = () => {
 
       <NavbarContent className="hidden sm:flex gap-16" justify="end">
         {menuItems.map((item, index) => (
-          <NavbarItem key={index}>
+          <NavbarItem key={index} className="cursor-pointer">
             {/* <Link
               className={`text-[#228B22] font-bold ${
                 isActive === index ? "underline underline-offset-8" : ""

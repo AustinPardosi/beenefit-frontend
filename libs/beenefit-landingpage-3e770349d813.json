@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "beenefit-landingpage",
+  "private_key_id": "3e770349d813da62b9ab20d5dff099399c2e05f2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCZ42XhdnIt7C1o\nNMD7/R9N1grQdbP+I4NjnJrQYN3t3paKdVCxWy7vHyw92G1gTAfrQhHZ8fhxLDhJ\nIJF8f7JhUNX85ZgEMiTCOuD52G1zusaRCzSnucPXQ2Zvx3y00qJ7QD5NpNYm6r1v\n13Y12YqBGt18i+t4CvyxN5MOk/0+i0rVlvgwIk2MmqSuWgbdak556wICU77fojrn\nsiZTcqt9O3CLh8+dOkuaYN0sBZbq1CsomVNCA99lBDtBomqG0sdRrH7pDrZVM8SS\n2K9Ig8FokFZi5y1pGX25hc4HjHKvDc1Nye7YAuxiGXLRmduRFfUlq+T5NwpFmKfb\ncU++tgkXAgMBAAECggEADjAMaGUtXArZGYaPlPaTyG8nmmuCTOJvo83q6gjxkmjX\nU+xCpG9bMY7xWxb/59pqpSfMvIgWAd0eqANO1n3GxOPD2X0+GYOZUaebA/3jrWv2\nuvr0/6eypL82i69b0dH/n+xe3Mq0jGxPoHxADkaVrJcnp2rBAAAcpvwQMfkL5pRN\nasbA2nDq3HsZotrrfqbPKHiE+XpAKiNhEXlEGSdnUBT6i4ViRoYH2M1ZucomlFW+\n8eHkiu45q878DEuS2Kzw2P5ZcxoqNmw5rwMGOgyLIJr6MNgKo87QdVUhfJdIo0t9\ntsINaJX/N7ASZre7hQxpKqMmZrOOZvAvcpxuzuEP6QKBgQDLozgSbZhEfQ3xPX3X\nA6f69fnh/D1hSggRj7LjNgIH3ff/QFWCPD64f2x6/PuEJ9YYHbzIdtAvS98Rpruc\ngFLJoB8dQ0jbdpGKJeyzB0LbP8vLSAvEYLPnGZmDSPXAJZra/dBXw5w5VAG5a3u6\nxqSaVE2hf5ynCdoo75lHXuab/wKBgQDBdVlFZHYxpbwikcAINiOAFSr9PTFVnA/E\n0psK40ZDvB5Sb2AgNBDVzt91jCZ3S/F4zp6qYVTzQjGsqyNJlz+MAaY/URDFYomt\nkSqqyI+w0Urum9p+M9Ov0/ZeiuTqMwLPTh0S+YIK8tZS8+ZKOQWCfLrfkYA922+W\nqd3OLKXy6QKBgQCET7rhDmB/L5ndgwy+pduBTk1cLh5bllSDxJCA3NiY7/pw2QY2\nJprCGdkMWE+74H5VEQ1WWwyNjoiT2XfRCffAlc9hnhQ6tGGAF4AiGrev6VWq8Vbj\n88kwgQujp8Y1YLmrTHsQa0KYZSLxrQqpouPUeq4uHtJUHiynqHY5T0obVQKBgQCI\n04agHb26v42gpZU8OY5COLZ/BZivBAHjI1GlEbnQjmyjwUIrhKejkP1bFhTeq0fO\nOdTejJiYtGiNxzzd/6tiSohan+tMr7TQnaufvtpiJKTqvjB6sg02fqPxmirtucZy\n+Lx3fyEKvVX4tahbNpk/ARjqpu4c0ebKmLnX6Jw2gQKBgDF4XxWroRHArZr70Hij\n29tjoW78Q0ClQRWXtqhnDI4M8wx5pfXpcwFT0Rs89iMyhX9nFB8aiyFheX3VIflT\naIS1t5UveTr4mSG5hXd462VGR1+cZR7kXYFc+GaHwAN4LGd6GAixKC+u285UGHzR\n2E2+DdYCpLkMMY6R877jNF1n\n-----END PRIVATE KEY-----\n",
+  "client_email": "new-users-info@beenefit-landingpage.iam.gserviceaccount.com",
+  "client_id": "100523619619461840434",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/new-users-info%40beenefit-landingpage.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
