@@ -17,7 +17,7 @@ const GetBeenefitCard: React.FC<StepSectionProps> = ({
   return (
     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full px-4 sm:px-8 md:pt-16">
       {/* Mobile View */}
-      <div className="sm:hidden flex flex-col justify-center items-center rounded-xl px-4 space-y-2 py-4 border-2 bg-[#F1F1F1] border-[#FFD67A]">
+      <div className="sm:hidden flex flex-col justify-center items-center rounded-xl px-4 space-y-2 py-4  bg-white border-1 shadow-xl border-[#FFD67A]">
         <div className="flex justify-center rounded-3xl px-8 py-1 bg-[#FFD67A] border-2 w-2/3 border-[#228B22]">
           <p className="font-bold text-[#228B22]">Step {stepNumber}</p>
         </div>

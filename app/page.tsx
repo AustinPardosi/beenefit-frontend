@@ -21,6 +21,7 @@ import TestimonyCard from "./components/Card/Testimony Card/page";
 import StartingUpCard from "./components/Card/Starting Up Card/page";
 import Link from "next/link";
 import BuzzEduCard from "./components/Card/Buzz Edu Card/page";
+import BuzzEduCarousel from "./components/Caraosel/page";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -62,7 +63,7 @@ export default function Home() {
     {
       imageSrc: "/assets/images/start_2.svg",
       title: "Rumah lebah ‘Tria’",
-      price: "Rp500,000",
+      price: "Rp550,000",
     },
     {
       imageSrc: "/assets/images/start_3.svg",
@@ -73,10 +74,12 @@ export default function Home() {
 
   return (
     <NextUIProvider>
-      <main className="flex overflow-hidden min-h-screen flex-col items-center w-full justify-center bg-[#FFF7E5]">
+      <main className="flex overflow-hidden flex-col items-center w-full justify-center bg-[#FFF7E5]">
         <NavbarComponent />
-
-        <div className="w-full space-y-4 md:space-y-16 py-16 md:pt-12">
+        <div className="hidden sm:flex">
+          <Image src="/assets/images/landing.svg" fill alt="landing" />
+        </div>
+        <div className="w-full space-y-4 md:space-y-16 py-16 md:pt-96">
           <section id="taman-ramah-lebah">
             <TamanRumahLebahCard />
           </section>
@@ -354,8 +357,10 @@ export default function Home() {
                 Learn more about the bees and beekeeping
               </p>
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-8 pt-4 w-full justify-center items-center px-4 sm:px-8 md:pt-8">
+            <div className="hidden sm:flex px-20 sm:pt-8">
+              <BuzzEduCarousel />
+            </div>
+            <div className="flex flex-col sm:hidden sm:flex-row gap-8 pt-4 w-full justify-center items-center px-4 sm:px-8 md:pt-8">
               <Link href="https://www.instagram.com/p/CzOirpZvEro/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==">
                 <BuzzEduCard
                   imageSrc="/assets/images/buzz_1.svg"
