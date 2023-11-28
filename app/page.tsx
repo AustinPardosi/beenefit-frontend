@@ -79,9 +79,11 @@ export default function Home() {
         <div className="hidden sm:flex">
           <Image src="/assets/images/landing.svg" fill alt="landing" />
         </div>
-        <div className="w-full space-y-4 md:space-y-16 py-16 md:pt-96">
+        <div className="w-full space-y-4 md:space-y-16 py-16 md:pt-80">
           <section id="taman-ramah-lebah">
-            <TamanRumahLebahCard />
+            <Link href="https://www.instagram.com/beenefit.garden/">
+              <TamanRumahLebahCard />
+            </Link>
           </section>
 
           <section id="introduction">
@@ -330,7 +332,7 @@ export default function Home() {
                   onPress={() => setIsModalOpen(true)}
                   className="bg-[#228B22] text-white text-lg sm:text-2xl font-bold px-6 sm:px-12 py-4 sm:py-8"
                 >
-                  Hubungi Saya
+                  Pesan Sekarang
                 </Button>
                 <ContactModal
                   isOpen={isModalOpen}

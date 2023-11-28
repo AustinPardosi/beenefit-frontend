@@ -1,26 +1,20 @@
 // app/api/submit.ts
 
 import { google } from "googleapis";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-) {
-  console.log("MASUK SINI");
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Only POST requests are allowed" });
-  }
-
-  const { name, phone } = req.body;
-
+export async function POST(req: NextRequest, res: NextResponse) {
   if (!process.env.GOOGLE_SHEETS_PRIVATE_KEY) {
-    return res
-      .status(500)
-      .json({ message: "Google Sheets private key is missing" });
+    return NextResponse.json(
+      { error: "Google Sheets private key is missing" },
+      { status: 500 },
+    );
   }
 
   try {
+    const requestBody = await req.json();
+    const { name, phone } = requestBody;
+
     // Authenticate with Google Sheets API
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -49,11 +43,12 @@ export default async function handler(
       },
     });
 
-    return res.status(200).json({
-      data: response.data,
-    });
+    return NextResponse.json({ data: response.data }, { status: 200 });
   } catch (error) {
     console.error("Error:", error);
-    return res.status(500).json({ message: "Something went wrong" });
+    return NextResponse.json(
+      { error: "Something went wrong" },
+      { status: 500 },
+    );
   }
 }
