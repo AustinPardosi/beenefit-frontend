@@ -33,13 +33,18 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     const sheets = google.sheets({ version: "v4", auth });
 
+    // Get the current timestamp
+    const timestamp = new Date();
+    // Format the timestamp using toLocaleString()
+    const formattedTimestamp = timestamp.toLocaleString();
+
     // Append data to the specified range in the Google Sheet
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.SPREADSHEET_ID,
-      range: "A1:B1", // Adjust the range as needed
+      range: "A1:C1", // Adjust the range as needed
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [[name, phone]],
+        values: [[formattedTimestamp, name, phone]],
       },
     });
 
