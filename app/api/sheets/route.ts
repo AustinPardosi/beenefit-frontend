@@ -2,13 +2,13 @@ import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest, res: NextResponse) {
-  if (!process.env.GOOGLE_SHEETS_PRIVATE_KEY) {
+  if (!process.env.NEXT_PUBLIC_GOOGLE_SHEETS_PRIVATE_KEY) {
     return NextResponse.json(
       { error: "Google Sheets private key is missing" },
       { status: 500 },
     );
   }
-  
+
   try {
     const requestBody = await req.json();
     const { name, phone } = requestBody;
@@ -16,8 +16,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
     // Authenticate with Google Sheets API
     const auth = new google.auth.GoogleAuth({
       credentials: {
-        client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_SHEETS_PRIVATE_KEY.replace(
+        client_email: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_CLIENT_EMAIL,
+        private_key: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_PRIVATE_KEY.replace(
           /\\n/g,
           "\n",
         ),
@@ -38,7 +38,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     // Append data to the specified range in the Google Sheet
     const response = await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.SPREADSHEET_ID,
+      spreadsheetId: process.env.NEXT_PUBLIC_SPREADSHEET_ID,
       range: "A1:C1", // Adjust the range as needed
       valueInputOption: "USER_ENTERED",
       requestBody: {

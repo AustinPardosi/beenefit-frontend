@@ -7,13 +7,13 @@ export async function addDataToSheet(data: {
   try {
     const target = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 
-    const privateKey = (process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(
+    const privateKey = (process.env.NEXT_PUBLIC_GOOGLE_SHEETS_PRIVATE_KEY || "").replace(
       /\\n/g,
       "\n",
     );
 
     const jwt = new google.auth.JWT(
-      process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+      process.env.NEXT_PUBLIC_GOOGLE_SHEETS_CLIENT_EMAIL,
       undefined,
       privateKey,
       target,
@@ -21,7 +21,7 @@ export async function addDataToSheet(data: {
 
     const sheets = google.sheets({ version: "v4", auth: jwt });
 
-    const spreadsheetId = process.env.SPREADSHEET_ID;
+    const spreadsheetId = process.env.NEXT_PUBLIC_SPREADSHEET_ID;
     if (!spreadsheetId) {
       throw new Error("Spreadsheet ID is not defined.");
     }
