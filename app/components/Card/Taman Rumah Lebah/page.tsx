@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const TamanRumahLebahCard: React.FC = () => {
   return (
-    <div className="w-full flex justify-center items-center pt-8 px-4 sm:pt-96 sm:px-8">
-      <div className="flex flex-col sm:flex-row justify-center items-center rounded-xl bg-white  sm:rounded-3xl p-4 sm:p-8 border-1 shadow-xl border-[#228B22]">
+    <div className="w-full flex justify-center items-center pt-8 px-4 sm:px-8">
+      <div className="flex flex-col sm:flex-row justify-center items-center rounded-xl bg-white sm:rounded-3xl p-4 sm:p-8 border-1 shadow-xl border-[#228B22]">
         <div className="sm:hidden flex flex-col justify-center items-center text-center gap-2">
           <h1 className="text-[#228B22] tracking-wider font-extrabold text-2xl">
             Taman Ramah Lebah
@@ -28,8 +28,8 @@ const TamanRumahLebahCard: React.FC = () => {
           <h1 className="hidden sm:flex sm:text-[#228B22] tracking-wider font-extrabold md:text-3xl sm:text-2xl">
             Taman Ramah Lebah
           </h1>
-          <h1 className="hidden sm:flex sm:text-[#FFB000] tracking-tight font-bold xl:text-base md:text-md sm:text-sm">
-            Fun, Beautiful, and Fresh Honey!
+          <h1 className="hidden sm:flex sm:text-[#FFB000] tracking-wider font-bold xl:text-base md:text-md sm:text-sm">
+            Taman Ramah Lingkungan Anak dan Lebah
           </h1>
           <h1 className="text-black text-center text-sm md:text-base lg:text-lg">
             <span className="text-[#228B22] font-extrabold">

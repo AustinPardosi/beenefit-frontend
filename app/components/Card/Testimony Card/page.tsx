@@ -17,7 +17,7 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({
 }) => {
   return (
     <Link href={linkSrc}>
-      <div className="relative flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full max-w-xl px-4 sm:px-8 md:pt-16">
+      <div className="relative flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full max-w-xl px-4 sm:px-8">
         <div className="flex flex-col gap-2 rounded-xl p-4 lg:p-8 md:rounded-3xl border-1 shadow-xl border-[#FFD67A] bg-white w-full">
           <h1 className="sm:hidden flex text-[#228B22] tracking-tight font-normal text-md md:text-base">
             {author}
@@ -50,7 +50,7 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({
         </div>
 
         {/* Others */}
-        <div className="hidden sm:flex absolute top-10 right-1">
+        <div className="hidden sm:flex absolute top-4 right-1">
           <Image
             src="/assets/images/Bee/bee_4.svg"
             width={60}

@@ -13,7 +13,7 @@ const StartingUpCard: React.FC<StartingUpItemProps> = ({
   price,
 }) => {
   return (
-    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 py-4 w-full px-4 sm:px-8">
+    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full px-4 sm:px-8">
       <div className="flex flex-col gap-4 border-1 p-8 bg-white shadow-xl rounded-xl md:rounded-3xl border-[#FFD67A]">
         <div className="flex justify-center items-center">
           <Image

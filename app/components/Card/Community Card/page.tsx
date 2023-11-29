@@ -9,7 +9,7 @@ interface CommunityCardProps {
 
 const CommunityCard: React.FC<CommunityCardProps> = ({ imageSrc, title, description }) => {
   return (
-    <div className="relative flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full px-4 sm:px-8 md:pt-16">
+    <div className="relative flex flex-col sm:flex-row justify-center items-center gap-4 pt-8 w-full px-4 sm:px-8">
       <div className="flex w-full justify-start items-center rounded-xl md:rounded-3xl p-4 lg:p-8 border-1 border-[#FFD67A] gap-8 bg-white shadow-xl h-40">
         <div className="w-fit flex justify-center items-center">
           <Image

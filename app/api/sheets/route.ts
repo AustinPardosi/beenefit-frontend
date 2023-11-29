@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   if (!process.env.NEXT_PUBLIC_GOOGLE_SHEETS_PRIVATE_KEY) {
-    console.log("HEY")
     return NextResponse.json(
       { error: "Google Sheets private key is missing" },
       { status: 500 },

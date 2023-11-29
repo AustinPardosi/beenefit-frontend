@@ -76,21 +76,25 @@ export default function Home() {
     <NextUIProvider>
       <main className="flex overflow-hidden flex-col items-center w-full justify-center bg-[#FFF7E5]">
         <NavbarComponent />
-        <div className="hidden sm:flex">
-          <Image src="/assets/images/landing.svg" fill alt="landing" />
+        <div className="flex w-screen pt-16 sm:pt-20">
+          <Image
+            src="/assets/images/landing.svg"
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+            width={500}
+            height={300}
+            alt="landing"
+          />
         </div>
-        <div className="w-full space-y-4 md:space-y-16 py-16 md:pt-80">
-          <section id="taman-ramah-lebah">
-            <Link href="https://www.instagram.com/beenefit.garden/">
-              <TamanRumahLebahCard />
-            </Link>
-          </section>
-
+        <div className="w-full space-y-4 md:space-y-8 py-8 sm:py-16">
           <section id="introduction">
             <ImageSection
               mobileSrc="/assets/images/introduction_sm.svg"
               desktopSrc="/assets/images/introduction.svg"
-              mobileWidth={300}
+              mobileWidth={200}
               desktopWidth={440}
               mobileHeight={40}
               desktopHeight={40}
@@ -99,11 +103,38 @@ export default function Home() {
             <IntroductionCard />
           </section>
 
+          <section id="testimony">
+            <ImageSection
+              mobileSrc="/assets/images/testimonial_sm.svg"
+              desktopSrc="/assets/images/testimonial.svg"
+              mobileWidth={190}
+              desktopWidth={500}
+              mobileHeight={90}
+              desktopHeight={40}
+              alt="starting-up"
+            />
+
+            <div className="flex flex-col sm:flex-row justify-center">
+              <TestimonyCard
+                imageSrc="/assets/images/testi_1.svg"
+                description="Ini awalnya gegara liat di rumah tetangga punya lebah klanceng dari @beenefit.stinglessbees ..."
+                author="Rumah Terang"
+                linkSrc="https://www.instagram.com/p/Cz-VswZS04R/?igshid=MzRlODBiNWFlZA%3D%3D&img_index=6"
+              />
+              <TestimonyCard
+                imageSrc="/assets/images/testi_2.svg"
+                description="*Emang boleh kita pelihara lebah? Emang boleh?*Keren yah, ternyata ga hanya kucing, anjing, ikan, dan ..."
+                author="Umang Abang"
+                linkSrc="https://www.instagram.com/p/C0DYY__Snpa/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA%3D%3D&img_index=1"
+              />
+            </div>
+          </section>
+
           <section id="get-beenefit">
             <ImageSection
               mobileSrc="/assets/images/get-beenefit_sm.svg"
               desktopSrc="/assets/images/get-beenefit.svg"
-              mobileWidth={400}
+              mobileWidth={300}
               desktopWidth={640}
               mobileHeight={90}
               desktopHeight={40}
@@ -134,11 +165,63 @@ export default function Home() {
             </div>
           </section>
 
+          <section id="taman-ramah-lebah">
+            <Link href="https://www.instagram.com/beenefit.garden/">
+              <TamanRumahLebahCard />
+            </Link>
+          </section>
+
+          <section id="starting-up">
+            <ImageSection
+              mobileSrc="/assets/images/starting-up_sm.svg"
+              desktopSrc="/assets/images/starting-up.svg"
+              mobileWidth={220}
+              desktopWidth={500}
+              mobileHeight={65}
+              desktopHeight={80}
+              alt="starting-up"
+            />
+
+            <div className="flex flex-col text-black justify-center items-center gap-8 pt-4 w-full px-4 sm:px-8 md:pt-8">
+              <p className="text-base sm:text-xl ">
+                View some of our beginner friendly starter packs, or{" "}
+                <span className="font-bold">see more at our marketplace</span>
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-0">
+                {startingUpItems.map((item, index) => (
+                  <StartingUpCard
+                    key={index}
+                    imageSrc={item.imageSrc}
+                    title={item.title}
+                    price={item.price}
+                  />
+                ))}
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <Button
+                  size="lg"
+                  radius="full"
+                  onPress={() => setIsModalOpen(true)}
+                  className="bg-[#228B22] text-white text-lg sm:text-2xl font-bold py-4"
+                >
+                  Pesan Sekarang
+                </Button>
+                <ContactModal
+                  isOpen={isModalOpen}
+                  onOpenChange={setIsModalOpen}
+                />
+                <p>*) Tim kami akan segera menghubungi anda</p>
+              </div>
+            </div>
+          </section>
+
           <section id="community">
             <ImageSection
               mobileSrc="/assets/images/community_sm.svg"
               desktopSrc="/assets/images/community.svg"
-              mobileWidth={400}
+              mobileWidth={300}
               desktopWidth={640}
               mobileHeight={80}
               desktopHeight={40}
@@ -166,27 +249,6 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="testimony">
-            <ImageSection
-              mobileSrc="/assets/images/testimonial_sm.svg"
-              desktopSrc="/assets/images/testimonial.svg"
-              mobileWidth={240}
-              desktopWidth={500}
-              mobileHeight={90}
-              desktopHeight={40}
-              alt="starting-up"
-            />
-
-            <div className="flex flex-col sm:flex-row justify-center">
-              <TestimonyCard
-                imageSrc="/assets/images/testi_1.svg"
-                description="Ini awalnya gegara liat di rumah tetangga punya lebah klanceng dari @beenefit.stinglessbees ..."
-                author="Rumah Terang"
-                linkSrc="https://www.instagram.com/p/Cz-VswZS04R/?igshid=MzRlODBiNWFlZA%3D%3D&img_index=6"
-              />
-            </div>
-          </section>
-
           <section id="faq">
             <ImageSection
               mobileSrc="/assets/images/faq_sm.svg"
@@ -198,7 +260,7 @@ export default function Home() {
               alt="starting-up"
             />
 
-            <div className="flex justify-center items-center pt-8 sm:pt-16 gap-16 px-4 sm:px-16 text-black">
+            <div className="flex justify-center items-center pt-8 gap-16 px-4 sm:px-16 text-black">
               <Accordion
                 variant="splitted"
                 itemClasses={{
@@ -259,7 +321,7 @@ export default function Home() {
           </section>
 
           <section id="contact">
-            <div className="w-full flex flex-col justify-center items-center gap-4 px-4 sm:px-16 pt-4 sm:pt-0 text-black">
+            <div className="w-full flex flex-col justify-center items-center gap-4 px-4 sm:px-16 pt-4 sm:pt-16 text-black">
               <p className="text-[#228B22] font-bold text-xl">
                 Belum yakin apakah tempat Anda cocok untuk memelihara stingless
                 bees?
@@ -293,52 +355,6 @@ export default function Home() {
                     Kontak admin untuk konsultasi
                   </Button>
                 </Link>
-              </div>
-            </div>
-          </section>
-
-          <section id="starting-up">
-            <ImageSection
-              mobileSrc="/assets/images/starting-up_sm.svg"
-              desktopSrc="/assets/images/starting-up.svg"
-              mobileWidth={200}
-              desktopWidth={500}
-              mobileHeight={65}
-              desktopHeight={80}
-              alt="starting-up"
-            />
-
-            <div className="flex flex-col text-black justify-center items-center gap-8 pt-4 w-full px-4 sm:px-8 md:pt-8">
-              <p className="text-base sm:text-xl ">
-                View some of our beginner friendly starter packs, or{" "}
-                <span className="font-bold">see more at our marketplace</span>
-              </p>
-
-              <div className="flex flex-col sm:flex-row">
-                {startingUpItems.map((item, index) => (
-                  <StartingUpCard
-                    key={index}
-                    imageSrc={item.imageSrc}
-                    title={item.title}
-                    price={item.price}
-                  />
-                ))}
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <Button
-                  size="lg"
-                  radius="full"
-                  onPress={() => setIsModalOpen(true)}
-                  className="bg-[#228B22] text-white text-lg sm:text-2xl font-bold px-6 sm:px-12 py-4 sm:py-8"
-                >
-                  Pesan Sekarang
-                </Button>
-                <ContactModal
-                  isOpen={isModalOpen}
-                  onOpenChange={setIsModalOpen}
-                />
-                <p>*) Tim kami akan segera menghubungi anda</p>
               </div>
             </div>
           </section>
