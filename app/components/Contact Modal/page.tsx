@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState, useMemo } from "react";
 import {
@@ -82,16 +82,23 @@ const ContactModal: React.FC<ContactModalProps> = ({
       }
     } catch (error) {
       console.error("Error sending data:", error);
-      // toast.error("Error", {
-      //   position: "bottom-right",
-      //   autoClose: 5000,
-      //   hideProgressBar: true,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "light",
-      // });
+      if (axios.isAxiosError(error)) {
+        // AxiosError has a more specific structure
+        console.error("AxiosError details:", error.response?.data);
+      } else {
+        // For other types of errors, log the message
+        console.error("Error details:", (error as Error).message);
+      }
+      toast.error("Error", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } finally {
       setLoading(false); // Set loading to false after the request is complete
     }
