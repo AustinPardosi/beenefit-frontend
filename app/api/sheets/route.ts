@@ -8,17 +8,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       { status: 500 },
     );
   }
-
-  console.log(
-    "process.env.GOOGLE_SHEETS_PRIVATE_KEY:",
-    process.env.GOOGLE_SHEETS_PRIVATE_KEY,
-  );
-  console.log(
-    "process.env.GOOGLE_SHEETS_CLIENT_EMAIL:",
-    process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-  );
-  console.log("process.env.SPREADSHEET_ID:", process.env.SPREADSHEET_ID);
-
+  
   try {
     const requestBody = await req.json();
     const { name, phone } = requestBody;

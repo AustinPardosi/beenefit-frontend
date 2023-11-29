@@ -50,6 +50,16 @@ const ContactModal: React.FC<ContactModalProps> = ({
 
       const formattedWhatsappValue = `'${whatsappValue}`;
       // Send data to the Next.js API route
+      console.log(
+        "process.env.GOOGLE_SHEETS_PRIVATE_KEY:",
+        process.env.GOOGLE_SHEETS_PRIVATE_KEY,
+      );
+      console.log(
+        "process.env.GOOGLE_SHEETS_CLIENT_EMAIL:",
+        process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+      );
+      console.log("process.env.SPREADSHEET_ID:", process.env.SPREADSHEET_ID);
+
       const response = await axios.post("/api/sheets", {
         name: namaValue,
         phone: formattedWhatsappValue,
