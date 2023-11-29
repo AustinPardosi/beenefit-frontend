@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   if (!process.env.NEXT_PUBLIC_GOOGLE_SHEETS_PRIVATE_KEY) {
+    console.log("HEY")
     return NextResponse.json(
       { error: "Google Sheets private key is missing" },
       { status: 500 },
@@ -36,6 +37,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     // Format the timestamp using toLocaleString()
     const formattedTimestamp = timestamp.toLocaleString();
 
+    console.log("SINI")
     // Append data to the specified range in the Google Sheet
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.NEXT_PUBLIC_SPREADSHEET_ID,
