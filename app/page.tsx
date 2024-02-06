@@ -43,7 +43,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 // https://wideawakeben.medium.com/adding-firebase-analytics-and-firestore-to-a-react-next-js-app-bffffc2f638e
+console.log("Checking window instance");
 if (typeof window !== "undefined") {
+  console.log("initializing firebase");
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 }
