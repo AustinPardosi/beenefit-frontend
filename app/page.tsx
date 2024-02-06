@@ -23,6 +23,28 @@ import Link from "next/link";
 import BuzzEduCard from "./components/Card/Buzz Edu Card/page";
 import BuzzEduCarousel from "./components/Caraosel/page";
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAtUqxVfLZd3VK2iOBCaB0HsErKjtGiQ6c",
+  authDomain: "beenefit-lp.firebaseapp.com",
+  projectId: "beenefit-lp",
+  storageBucket: "beenefit-lp.appspot.com",
+  messagingSenderId: "374394202278",
+  appId: "1:374394202278:web:8ffac89e001a7a2869ec67",
+  measurementId: "G-M2VQCTZ0Q1"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
