@@ -42,8 +42,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// https://wideawakeben.medium.com/adding-firebase-analytics-and-firestore-to-a-react-next-js-app-bffffc2f638e
+if (typeof window !== "undefined") {
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+}
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
